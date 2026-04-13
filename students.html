@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Студентам КАІ — розклад, гуртожиток, кар'єра, Erasmus+, підтримка">
+  <title>Студентам — КАІ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="container">
+    <div class="topbar-links">
+      <a href="tel:+380442404517">☎ +38 (044) 240-45-17</a>
+      <a href="mailto:info@kai.edu.ua">✉ info@kai.edu.ua</a>
+      <a href="#">📍 просп. Любомира Гузара, 1, Київ</a>
+    </div>
+    <div class="topbar-right">
+      <div class="lang-switcher">
+        <button class="lang-btn" data-lang="uk">UA</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="site-logo">
+      <div class="logo-emblem">КАІ</div>
+      <div class="logo-text">
+        <strong>Київський авіаційний інститут</strong>
+        <span>Державний університет</span>
+      </div>
+    </a>
+    <nav class="main-nav">
+      <ul class="nav-list">
+        <li class="nav-item"><a href="about.html" class="nav-link">Про університет</a></li>
+        <li class="nav-item"><a href="https://vstup.kai.edu.ua" class="nav-link" target="_blank">Вступ 2026 ↗</a></li>
+        <li class="nav-item"><a href="faculties.html" class="nav-link">Факультети</a></li>
+        <li class="nav-item"><a href="students.html" class="nav-link active">Студентам <span class="chevron">▾</span></a>
+          <div class="dropdown">
+            <a href="#schedule">Розклад</a>
+            <a href="#scholarships">Стипендії</a>
+            <a href="#dormitory">Гуртожиток</a>
+            <a href="#career">Кар'єра</a>
+            <a href="#clubs">Клуби та спорт</a>
+            <a href="#erasmus">Erasmus+</a>
+            <a href="#support">Підтримка</a>
+          </div>
+        </li>
+        <li class="nav-item"><a href="contacts.html" class="nav-link">Контакти</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <a href="https://du.kai.edu.ua" class="btn btn-outline btn-sm" target="_blank">🎓 Кабінет студента</a>
+      <a href="https://online.kai.edu.ua" class="btn btn-primary btn-sm" target="_blank">▶ KAI Online</a>
+    </div>
+    <button class="hamburger" aria-label="Меню"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="container">
+    <nav class="breadcrumb"><a href="index.html">Головна</a><span>/</span><span>Студентам</span></nav>
+    <h1>Студентам КАІ</h1>
+    <p>Сервіси, підтримка та можливості для студентів університету</p>
+  </div>
+</div>
+
+<!-- QUICK LINKS -->
+<div class="quick-access">
+  <div class="container">
+    <div class="quick-grid">
+      <a href="https://du.kai.edu.ua" class="quick-card" target="_blank">
+        <div class="quick-icon">🖥</div>
+        <span class="quick-label">Digital University</span>
+      </a>
+      <a href="#schedule" class="quick-card">
+        <div class="quick-icon">📅</div>
+        <span class="quick-label">Розклад</span>
+      </a>
+      <a href="#dormitory" class="quick-card">
+        <div class="quick-icon">🏠</div>
+        <span class="quick-label">Гуртожиток</span>
+      </a>
+      <a href="#career" class="quick-card">
+        <div class="quick-icon">💼</div>
+        <span class="quick-label">Кар'єра</span>
+      </a>
+      <a href="#erasmus" class="quick-card">
+        <div class="quick-icon">🌍</div>
+        <span class="quick-label">Erasmus+</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- SCHEDULE -->
+<section id="schedule">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Навчання</span>
+      <h2 class="section-title">Розклад занять</h2>
+      <p class="section-sub">Актуальний розклад через систему Digital University</p>
+    </div>
+    <div style="background:var(--kai-sky);border-radius:var(--radius-lg);padding:40px;text-align:center;">
+      <div style="font-size:3rem;margin-bottom:16px;">📅</div>
+      <h3 style="font-size:1.3rem;font-weight:800;margin-bottom:12px;">Digital University — особистий кабінет студента</h3>
+      <p style="color:var(--kai-muted);margin-bottom:24px;max-width:480px;margin-left:auto;margin-right:auto;">Розклад занять, оцінки, навчальний план, електронний деканат — все в одному місці</p>
+      <a href="https://du.kai.edu.ua" class="btn btn-primary btn-lg" target="_blank">🎓 Відкрити Digital University ↗</a>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section style="background:var(--kai-bg);">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Сервіси</span>
+      <h2 class="section-title">Студентські сервіси</h2>
+    </div>
+    <div class="services-grid">
+      <div class="service-card" id="scholarships">
+        <div class="service-icon">💰</div>
+        <h3>Стипендії та фінансова допомога</h3>
+        <p>Академічна, соціальна та іменна стипендії. Матеріальна допомога студентам у складних ситуаціях.</p>
+        <a href="#" class="btn btn-outline btn-sm">Дізнатися більше</a>
+      </div>
+      <div class="service-card" id="dormitory">
+        <div class="service-icon">🏠</div>
+        <h3>Студентський гуртожиток</h3>
+        <p>4 гуртожитки, 2 500 місць. Безпечне та комфортне проживання поруч з університетом.</p>
+        <a href="#" class="btn btn-outline btn-sm">Подати заявку</a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">📚</div>
+        <h3>Наукова бібліотека</h3>
+        <p>Понад 1 млн одиниць зберігання. Електронний каталог, доступ до міжнародних баз даних Scopus, WoS.</p>
+        <a href="#" class="btn btn-outline btn-sm">Електронний каталог</a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🍽</div>
+        <h3>Харчування</h3>
+        <p>3 студентські їдальні та буфети на території університету. Пільгове харчування для соціально незахищених.</p>
+        <a href="#" class="btn btn-outline btn-sm">Меню та графік</a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🚌</div>
+        <h3>Транспорт</h3>
+        <p>Безкоштовний студентський автобус між корпусами. Пільговий проїзд у громадському транспорті Києва.</p>
+        <a href="#" class="btn btn-outline btn-sm">Маршрути</a>
+      </div>
+      <div class="service-card" id="support">
+        <div class="service-icon">🤝</div>
+        <h3>Психологічна підтримка</h3>
+        <p>Безкоштовні консультації психолога, тренінги та групові заняття. Підтримка у важкі часи.</p>
+        <a href="#" class="btn btn-outline btn-sm">Записатися</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CAREER -->
+<section id="career">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Можливості</span>
+      <h2 class="section-title">Кар'єра та стажування</h2>
+      <p class="section-sub">Центр кар'єри КАІ допомагає студентам знайти перше місце роботи або стажування</p>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start;">
+      <div>
+        <div class="value-list">
+          <div class="value-item">
+            <div class="value-icon">📋</div>
+            <div class="value-text">
+              <h4>Job Board КАІ</h4>
+              <p>200+ активних вакансій від партнерів університету</p>
+            </div>
+          </div>
+          <div class="value-item">
+            <div class="value-icon">🏢</div>
+            <div class="value-text">
+              <h4>День кар'єри</h4>
+              <p>Щорічна зустріч студентів з 50+ компаніями-роботодавцями</p>
+            </div>
+          </div>
+          <div class="value-item">
+            <div class="value-icon">🎯</div>
+            <div class="value-text">
+              <h4>Менторська програма</h4>
+              <p>Підтримка від успішних випускників КАІ</p>
+            </div>
+          </div>
+          <div class="value-item">
+            <div class="value-icon">✍️</div>
+            <div class="value-text">
+              <h4>Резюме та інтерв'ю</h4>
+              <p>Безкоштовні майстер-класи з написання CV та підготовки до інтерв'ю</p>
+            </div>
+          </div>
+        </div>
+        <div class="mt-8">
+          <a href="#" class="btn btn-primary btn-lg">💼 Відкрити Job Board</a>
+        </div>
+      </div>
+      <div>
+        <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:20px;">Компанії-партнери, що наймають випускників КАІ</h3>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+          <div class="partner-logo">Airbus</div>
+          <div class="partner-logo">Boeing</div>
+          <div class="partner-logo">SoftServe</div>
+          <div class="partner-logo">EPAM</div>
+          <div class="partner-logo">ДП «Антонов»</div>
+          <div class="partner-logo">Укравіатранс</div>
+          <div class="partner-logo">GlobalLogic</div>
+          <div class="partner-logo">Uklon</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLUBS -->
+<section id="clubs" style="background:var(--kai-bg);">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Студентське життя</span>
+      <h2 class="section-title">Клуби, спорт та активності</h2>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">⚽</div>
+        <h3>Спорт</h3>
+        <p>Футбол, волейбол, баскетбол, легка атлетика, плавання, бойові мистецтва. Власний спорткомплекс.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🎭</div>
+        <h3>Культура та творчість</h3>
+        <p>Студентський театр, KВК, хор, танцювальні колективи, музичні гурти.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🤖</div>
+        <h3>Технічні гуртки</h3>
+        <p>Robotics Club, Drone Racing, AI/ML клуб, кіберспорт, програмування.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🌱</div>
+        <h3>Волонтерство</h3>
+        <p>Волонтерський центр КАІ, екологічні ініціативи, підтримка ЗСУ.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">📰</div>
+        <h3>Студентські медіа</h3>
+        <p>Газета «Авіатор», студентське радіо, YouTube-канал, телеграм-канал.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">💡</div>
+        <h3>Студентське самоврядування</h3>
+        <p>Студентська рада, академічна рада, профспілка студентів і аспірантів.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ERASMUS -->
+<section id="erasmus">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Міжнародне</span>
+      <h2 class="section-title">Erasmus+ та академічна мобільність</h2>
+      <p class="section-sub">Навчайся у провідних університетах Європи завдяки програмам обміну</p>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;">
+      <div>
+        <div class="about-highlight">
+          💡 Щороку понад 80 студентів КАІ навчаються за кордоном завдяки Erasmus+ та двостороннім угодам
+        </div>
+        <div class="value-list" style="margin-top:20px;">
+          <div class="value-item">
+            <div class="value-icon">🇩🇪</div>
+            <div class="value-text"><h4>Університет Дрездена, Німеччина</h4><p>Аерокосмічна інженерія, до 12 місяців</p></div>
+          </div>
+          <div class="value-item">
+            <div class="value-icon">🇵🇱</div>
+            <div class="value-text"><h4>Варшавський технологічний університет, Польща</h4><p>IT, авіація, економіка</p></div>
+          </div>
+          <div class="value-item">
+            <div class="value-icon">🇫🇷</div>
+            <div class="value-text"><h4>ISAE-SUPAERO, Франція</h4><p>Аерокосмічні технології</p></div>
+          </div>
+          <div class="value-item">
+            <div class="value-icon">🇨🇿</div>
+            <div class="value-text"><h4>Чеський технічний університет, Прага</h4><p>Інженерія, IT, дизайн</p></div>
+          </div>
+        </div>
+      </div>
+      <div style="background:var(--kai-sky);border-radius:var(--radius-lg);padding:32px;">
+        <h3 style="font-size:1.1rem;font-weight:800;margin-bottom:16px;">Як подати заявку на Erasmus+</h3>
+        <ol style="display:flex;flex-direction:column;gap:12px;padding-left:20px;font-size:.9rem;color:var(--kai-muted);">
+          <li style="font-size:.9rem;">Перевір список університетів-партнерів КАІ</li>
+          <li style="font-size:.9rem;">Зверніться до відділу міжнародних відносин</li>
+          <li style="font-size:.9rem;">Підготуй мовний сертифікат (B2+)</li>
+          <li style="font-size:.9rem;">Заповни анкету та подай документи</li>
+          <li style="font-size:.9rem;">Отримай підтвердження від приймаючого університету</li>
+        </ol>
+        <div style="margin-top:20px;">
+          <a href="contacts.html#form" class="btn btn-primary" style="width:100%;justify-content:center;">Подати заявку на Erasmus+</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INCLUSION -->
+<section style="background:var(--kai-bg);padding:56px 0;">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Доступність</span>
+      <h2 class="section-title">Інклюзивне середовище</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
+      <div class="faculty-card"><div class="faculty-icon">♿</div><h3>Безбар'єрне середовище</h3><p>Пандуси, ліфти, спеціальні місця у навчальних корпусах</p></div>
+      <div class="faculty-card"><div class="faculty-icon">👁</div><h3>Підтримка слабозорих</h3><p>Матеріали у доступних форматах, підтримка асистивних технологій</p></div>
+      <div class="faculty-card"><div class="faculty-icon">🧩</div><h3>Підтримка різноманіття</h3><p>Індивідуальні програми для студентів з особливими потребами</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="site-logo" style="margin-bottom:16px;">
+          <div class="logo-emblem">КАІ</div>
+          <div class="logo-text"><strong style="color:#fff;">КАІ</strong><span>Київський авіаційний інститут</span></div>
+        </div>
+        <p>Державний університет «Київський авіаційний інститут»</p>
+        <div class="footer-socials">
+          <a href="#" class="social-btn">FB</a><a href="#" class="social-btn">IG</a><a href="#" class="social-btn">TG</a><a href="#" class="social-btn">YT</a>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Університет</h4><ul>
+        <li><a href="about.html">Про КАІ</a></li><li><a href="faculties.html">Факультети</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Студентам</h4><ul>
+        <li><a href="#schedule">Розклад</a></li><li><a href="#dormitory">Гуртожиток</a></li><li><a href="#career">Кар'єра</a></li><li><a href="#erasmus">Erasmus+</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Контакти</h4><ul>
+        <li><a href="contacts.html">Адреси</a></li><li><a href="contacts.html#form">Написати нам</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Державний університет «Київський авіаційний інститут»</span>
+      <div class="footer-bottom-links"><a href="#">Конфіденційність</a><a href="#">Доступність</a></div>
+    </div>
+  </div>
+</footer>
+
+<button class="chatbot-btn" id="chatbot-btn" aria-label="Чат">💬<span class="chatbot-badge">1</span></button>
+<script src="js/main.js"></script>
+</body>
+</html>

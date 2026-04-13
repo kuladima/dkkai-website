@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Факультети та освітні програми КАІ — 150+ програм, 9 факультетів">
+  <title>Факультети та програми — КАІ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="container">
+    <div class="topbar-links">
+      <a href="tel:+380442404517">☎ +38 (044) 240-45-17</a>
+      <a href="mailto:info@kai.edu.ua">✉ info@kai.edu.ua</a>
+      <a href="#">📍 просп. Любомира Гузара, 1, Київ</a>
+    </div>
+    <div class="topbar-right">
+      <div class="lang-switcher">
+        <button class="lang-btn" data-lang="uk">UA</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="site-logo">
+      <div class="logo-emblem">КАІ</div>
+      <div class="logo-text">
+        <strong>Київський авіаційний інститут</strong>
+        <span>Державний університет</span>
+      </div>
+    </a>
+    <nav class="main-nav">
+      <ul class="nav-list">
+        <li class="nav-item"><a href="about.html" class="nav-link">Про університет</a></li>
+        <li class="nav-item"><a href="https://vstup.kai.edu.ua" class="nav-link" target="_blank">Вступ 2026 ↗</a></li>
+        <li class="nav-item"><a href="faculties.html" class="nav-link active">Факультети <span class="chevron">▾</span></a>
+          <div class="dropdown">
+            <a href="#aerospace">Аерокосмічний</a>
+            <a href="#navigation">Аеронавігація та електроніка</a>
+            <a href="#architecture">Архітектура та будівництво</a>
+            <a href="#ecology">Екологічна безпека</a>
+            <a href="#economy">Економіка та бізнес</a>
+            <a href="#cs">Комп'ютерні науки</a>
+            <a href="#psychology">Психологія та комунікації</a>
+            <a href="#transport">Транспорт та логістика</a>
+            <a href="#law">Право та міжнародні відносини</a>
+            <a href="#programs">→ Всі освітні програми</a>
+          </div>
+        </li>
+        <li class="nav-item"><a href="students.html" class="nav-link">Студентам</a></li>
+        <li class="nav-item"><a href="contacts.html" class="nav-link">Контакти</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <a href="https://du.kai.edu.ua" class="btn btn-outline btn-sm" target="_blank">🎓 Кабінет студента</a>
+      <a href="https://online.kai.edu.ua" class="btn btn-primary btn-sm" target="_blank">▶ KAI Online</a>
+    </div>
+    <button class="hamburger" aria-label="Меню"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="container">
+    <nav class="breadcrumb"><a href="index.html">Головна</a><span>/</span><span>Факультети</span></nav>
+    <h1>Факультети та освітні програми</h1>
+    <p>9 факультетів · 1 коледж · 150+ освітніх програм · Бакалавр, Магістр, Аспірантура</p>
+  </div>
+</div>
+
+<!-- FACULTIES LIST -->
+<section>
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Структура</span>
+      <h2 class="section-title">Факультети КАІ</h2>
+    </div>
+    <div class="faculty-grid">
+      <a href="#aerospace" class="faculty-card" id="aerospace">
+        <div class="faculty-icon">🚀</div>
+        <h3>Аерокосмічний факультет</h3>
+        <p>Авіаційна та ракетно-космічна техніка, двигунобудування, бортові системи</p>
+        <span class="faculty-tag">Декан: проф. Іваненко О.В.</span>
+      </a>
+      <a href="#navigation" class="faculty-card" id="navigation">
+        <div class="faculty-icon">📡</div>
+        <h3>Аеронавігація, електроніка та телекомунікації</h3>
+        <p>Авіоніка, навігаційні системи, телекомунікації та радіоелектроніка</p>
+        <span class="faculty-tag">Декан: проф. Мороз В.П.</span>
+      </a>
+      <a href="#architecture" class="faculty-card" id="architecture">
+        <div class="faculty-icon">🏗</div>
+        <h3>Архітектура, будівництво і дизайн</h3>
+        <p>Архітектура, будівництво, дизайн середовища та промисловий дизайн</p>
+        <span class="faculty-tag">Декан: проф. Кравченко Л.М.</span>
+      </a>
+      <a href="#ecology" class="faculty-card" id="ecology">
+        <div class="faculty-icon">🌿</div>
+        <h3>Екологічна безпека, інженерія та технології</h3>
+        <p>Екологія, хімічна технологія, матеріалознавство та авіаційне паливо</p>
+        <span class="faculty-tag">Декан: проф. Ткаченко С.О.</span>
+      </a>
+      <a href="#economy" class="faculty-card" id="economy">
+        <div class="faculty-icon">📊</div>
+        <h3>Економіка та бізнес-адміністрування</h3>
+        <p>Менеджмент, маркетинг, фінанси, облік і аудит, міжнародна економіка</p>
+        <span class="faculty-tag">Декан: проф. Гриценко Н.В.</span>
+      </a>
+      <a href="#cs" class="faculty-card" id="cs">
+        <div class="faculty-icon">💻</div>
+        <h3>Комп'ютерні науки та технології</h3>
+        <p>Програмна інженерія, кібербезпека, AI/ML, системний аналіз</p>
+        <span class="faculty-tag">Декан: проф. Захаренко Д.І.</span>
+      </a>
+      <a href="#psychology" class="faculty-card" id="psychology">
+        <div class="faculty-icon">🧠</div>
+        <h3>Психологія, комунікації та переклад</h3>
+        <p>Психологія, журналістика, реклама і PR, переклад</p>
+        <span class="faculty-tag">Декан: проф. Олійник О.М.</span>
+      </a>
+      <a href="#transport" class="faculty-card" id="transport">
+        <div class="faculty-icon">🚌</div>
+        <h3>Транспорт та логістика</h3>
+        <p>Авіаційний транспорт, логістика, управління процесами перевезень</p>
+        <span class="faculty-tag">Декан: проф. Литвин Б.А.</span>
+      </a>
+      <a href="#law" class="faculty-card" id="law">
+        <div class="faculty-icon">⚖️</div>
+        <h3>Право та міжнародні відносини</h3>
+        <p>Право, міжнародне право, міжнародні відносини, публічне управління</p>
+        <span class="faculty-tag">Декан: проф. Стецюк Р.В.</span>
+      </a>
+      <a href="#college" class="faculty-card" id="college" style="background:linear-gradient(135deg,var(--kai-sky),#fff);">
+        <div class="faculty-icon">🏫</div>
+        <h3>Київський фаховий коледж комп'ютерних технологій та економіки</h3>
+        <p>Фахова передвища освіта у сферах IT та економіки</p>
+        <span class="faculty-tag">Директор: Павленко К.Г.</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAMS CATALOG -->
+<section id="programs" style="background:var(--kai-bg);">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Каталог</span>
+      <h2 class="section-title">Освітні програми</h2>
+      <p class="section-sub">150+ програм підготовки на рівнях бакалавра, магістра та аспірантури</p>
+    </div>
+
+    <!-- Search & Filter -->
+    <div class="programs-search">
+      <div class="search-input-wrap">
+        <span class="icon">🔍</span>
+        <input type="text" id="prog-search" placeholder="Пошук програми...">
+      </div>
+      <select class="filter-select" id="prog-level">
+        <option value="">Всі рівні</option>
+        <option value="bachelor">Бакалавр</option>
+        <option value="master">Магістр</option>
+        <option value="phd">Аспірантура</option>
+      </select>
+      <select class="filter-select" id="prog-faculty">
+        <option value="">Всі факультети</option>
+        <option value="aerospace">Аерокосмічний</option>
+        <option value="cs">Комп'ютерні науки</option>
+        <option value="economy">Економіка та бізнес</option>
+        <option value="navigation">Аеронавігація</option>
+        <option value="transport">Транспорт</option>
+        <option value="law">Право</option>
+        <option value="ecology">Екологія</option>
+        <option value="psychology">Психологія</option>
+        <option value="architecture">Архітектура</option>
+      </select>
+      <select class="filter-select">
+        <option value="">Форма навчання</option>
+        <option>Денна</option>
+        <option>Заочна</option>
+        <option>Дистанційна</option>
+      </select>
+    </div>
+
+    <!-- Programs grid -->
+    <div class="programs-grid">
+
+      <!-- Aerospace -->
+      <div class="program-card" data-level="bachelor" data-faculty="aerospace">
+        <span class="program-level">Бакалавр</span>
+        <h4>Авіація та космонавтика</h4>
+        <p class="program-faculty">🚀 Аерокосмічний факультет</p>
+        <div class="program-meta">
+          <span>📅 4 роки</span>
+          <span>🌐 UA/EN</span>
+          <span>💰 Держзамовлення</span>
+        </div>
+      </div>
+      <div class="program-card" data-level="master" data-faculty="aerospace">
+        <span class="program-level">Магістр</span>
+        <h4>Аерокосмічні технології та системи</h4>
+        <p class="program-faculty">🚀 Аерокосмічний факультет</p>
+        <div class="program-meta">
+          <span>📅 1.5 р.</span>
+          <span>🌐 UA/EN</span>
+          <span>💰 Контракт</span>
+        </div>
+      </div>
+      <div class="program-card" data-level="bachelor" data-faculty="aerospace">
+        <span class="program-level">Бакалавр</span>
+        <h4>Ракетні та космічні апарати</h4>
+        <p class="program-faculty">🚀 Аерокосмічний факультет</p>
+        <div class="program-meta">
+          <span>📅 4 роки</span>
+          <span>🌐 UA</span>
+          <span>💰 Держзамовлення</span>
+        </div>
+      </div>
+
+      <!-- CS -->
+      <div class="program-card" data-level="bachelor" data-faculty="cs">
+        <span class="program-level">Бакалавр</span>
+        <h4>Програмна інженерія</h4>
+        <p class="program-faculty">💻 Факультет КНТ</p>
+        <div class="program-meta">
+          <span>📅 4 роки</span>
+          <span>🌐 UA/EN</span>
+          <span>💰 Держзамовлення</span>
+        </div>
+      </div>
+      <div class="program-card" data-level="bachelor" data-faculty="cs">
+        <span class="program-level">Бакалавр</span>
+        <h4>Кібербезпека</h4>
+        <p class="program-faculty">💻 Факультет КНТ</p>
+        <div class="program-meta">
+          <span>📅 4 роки</span>
+          <span>🌐 UA</span>
+          <span>💰 Держзамовлення</span>
+        </div>
+      </div>
+      <div class="program-card" data-level="master" data-faculty="cs">
+        <span class="program-level">Магістр</span>
+        <h4>Штучний інтелект та машинне навчання</h4>
+        <p class="program-faculty">💻 Факультет КНТ</p>
+        <div class="program-meta">
+          <span>📅 1.5 р.</span>
+          <span>🌐 UA/EN</span>
+          <span>💰 Контракт</span>
+        </div>
+      </div>
+
+      <!-- Economy -->
+      <div class="program-card" data-level="bachelor" data-faculty="economy">
+        <span class="program-level">Бакалавр</span>
+        <h4>Менеджмент організацій</h4>
+        <p class="program-faculty">📊 Факультет економіки</p>
+        <div class="program-meta">
+          <span>📅 4 роки</span>
+          <span>🌐 UA</span>
+          <span>💰 Держзамовлення</span>
+        </div>
+      </div>
+      <div class="program-card" data-level="master" data-faculty="economy">
+        <span class="program-level">Магістр</span>
+        <h4>Бізнес-адміністрування (MBA)</h4>
+        <p class="program-faculty">📊 Факультет економіки</p>
+        <div class="program-meta">
+          <span>📅 1.5 р.</span>
+          <span>🌐 UA/EN</span>
+          <span>💰 Контракт</span>
+        </div>
+      </div>
+
+      <!-- Navigation -->
+      <div class="program-card" data-level="bachelor" data-faculty="navigation">
+        <span class="program-level">Бакалавр</span>
+        <h4>Авіоніка</h4>
+        <p class="program-faculty">📡 ФАЕТ</p>
+        <div class="program-meta">
+          <span>📅 4 роки</span>
+          <span>🌐 UA</span>
+          <span>💰 Держзамовлення</span>
+        </div>
+      </div>
+      <div class="program-card" data-level="bachelor" data-faculty="navigation">
+        <span class="program-level">Бакалавр</span>
+        <h4>Телекомунікації та радіотехніка</h4>
+        <p class="program-faculty">📡 ФАЕТ</p>
+        <div class="program-meta">
+          <span>📅 4 роки</span>
+          <span>🌐 UA</span>
+          <span>💰 Держзамовлення</span>
+        </div>
+      </div>
+
+      <!-- Transport -->
+      <div class="program-card" data-level="bachelor" data-faculty="transport">
+        <span class="program-level">Бакалавр</span>
+        <h4>Авіаційний транспорт</h4>
+        <p class="program-faculty">🚌 Факультет транспорту</p>
+        <div class="program-meta">
+          <span>📅 4 роки</span>
+          <span>🌐 UA/EN</span>
+          <span>💰 Держзамовлення</span>
+        </div>
+      </div>
+
+      <!-- Law -->
+      <div class="program-card" data-level="bachelor" data-faculty="law">
+        <span class="program-level">Бакалавр</span>
+        <h4>Право</h4>
+        <p class="program-faculty">⚖️ Факультет права</p>
+        <div class="program-meta">
+          <span>📅 4 роки</span>
+          <span>🌐 UA</span>
+          <span>💰 Контракт</span>
+        </div>
+      </div>
+
+      <!-- PhD examples -->
+      <div class="program-card" data-level="phd" data-faculty="aerospace">
+        <span class="program-level" style="background:#FEF3C7;color:#92400E;">Аспірантура</span>
+        <h4>Авіаційна та ракетно-космічна техніка</h4>
+        <p class="program-faculty">🚀 Аерокосмічний факультет</p>
+        <div class="program-meta">
+          <span>📅 4 роки</span>
+          <span>🌐 UA</span>
+          <span>💰 Держзамовлення</span>
+        </div>
+      </div>
+      <div class="program-card" data-level="phd" data-faculty="cs">
+        <span class="program-level" style="background:#FEF3C7;color:#92400E;">Аспірантура</span>
+        <h4>Комп'ютерні науки</h4>
+        <p class="program-faculty">💻 Факультет КНТ</p>
+        <div class="program-meta">
+          <span>📅 4 роки</span>
+          <span>🌐 UA/EN</span>
+          <span>💰 Держзамовлення</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="text-center mt-8">
+      <p class="text-muted mb-4">Показано 14 з 150+ освітніх програм</p>
+      <a href="https://vstup.kai.edu.ua" class="btn btn-primary btn-lg" target="_blank">Всі програми на сайті Приймальної комісії ↗</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section style="background:var(--kai-blue);color:#fff;padding:56px 0;text-align:center;">
+  <div class="container">
+    <h2 style="font-size:1.8rem;font-weight:800;margin-bottom:12px;">Готовий до вступу в КАІ?</h2>
+    <p style="color:rgba(255,255,255,.8);margin-bottom:28px;font-size:1rem;">Вступна кампанія 2026 вже розпочата. Обери програму та подай заявку онлайн.</p>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+      <a href="https://vstup.kai.edu.ua" class="btn btn-gold btn-lg" target="_blank">Подати заявку на вступ ↗</a>
+      <a href="contacts.html#form" class="btn btn-lg" style="background:rgba(255,255,255,.15);color:#fff;border:1.5px solid rgba(255,255,255,.4);">Отримати консультацію</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="site-logo" style="margin-bottom:16px;">
+          <div class="logo-emblem">КАІ</div>
+          <div class="logo-text"><strong style="color:#fff;">КАІ</strong><span>Київський авіаційний інститут</span></div>
+        </div>
+        <p>Державний університет «Київський авіаційний інститут»</p>
+        <div class="footer-socials">
+          <a href="#" class="social-btn">FB</a><a href="#" class="social-btn">IG</a><a href="#" class="social-btn">TG</a><a href="#" class="social-btn">YT</a>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Університет</h4><ul>
+        <li><a href="about.html">Про КАІ</a></li><li><a href="faculties.html">Факультети</a></li><li><a href="#">Документи</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Вступ</h4><ul>
+        <li><a href="https://vstup.kai.edu.ua" target="_blank">Вступ 2026 ↗</a></li><li><a href="faculties.html#programs">Програми</a></li><li><a href="https://online.kai.edu.ua" target="_blank">KAI Online ↗</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Контакти</h4><ul>
+        <li><a href="contacts.html">Адреси</a></li><li><a href="contacts.html#form">Написати нам</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Державний університет «Київський авіаційний інститут»</span>
+      <div class="footer-bottom-links"><a href="#">Конфіденційність</a><a href="#">Доступність</a></div>
+    </div>
+  </div>
+</footer>
+
+<button class="chatbot-btn" id="chatbot-btn" aria-label="Чат">💬<span class="chatbot-badge">1</span></button>
+<script src="js/main.js"></script>
+</body>
+</html>
