@@ -16,17 +16,34 @@
     <div class="auth-logo">
       <div class="auth-emblem">КАІ</div>
       <h2>Admin Panel</h2>
-      <p>Введіть GitHub Personal Access Token для входу в адмін-панель</p>
     </div>
     <div id="auth-error" class="auth-error"></div>
-    <div class="auth-field">
-      <label>GitHub Token</label>
-      <input type="password" id="input-token" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx" autocomplete="off">
+
+    <!-- MODE 1: Password login -->
+    <div id="auth-mode-password" style="display:none">
+      <p style="text-align:center;color:var(--a-muted);font-size:.875rem;margin-bottom:20px;">Введіть пароль адміністратора</p>
+      <div class="auth-field">
+        <label>Пароль</label>
+        <input type="password" id="input-password" placeholder="••••••••" autocomplete="current-password">
+      </div>
+      <button class="btn-auth" id="btn-login-pwd">🔓 Увійти</button>
+      <p class="auth-hint" style="margin-top:16px;">
+        <a href="#" id="link-use-token">Увійти через GitHub токен →</a>
+      </p>
     </div>
-    <button class="btn-auth" id="btn-login">Увійти</button>
-    <p class="auth-hint">Потрібен токен з правами <strong>repo</strong>.<br>
-      <a href="https://github.com/settings/tokens/new" target="_blank">Створити токен на GitHub →</a>
-    </p>
+
+    <!-- MODE 2: Token login (first time / reset) -->
+    <div id="auth-mode-token" style="display:none">
+      <p style="text-align:center;color:var(--a-muted);font-size:.875rem;margin-bottom:20px;">Перший вхід — введіть GitHub токен.<br>Надалі можна використовувати пароль.</p>
+      <div class="auth-field">
+        <label>GitHub Personal Access Token</label>
+        <input type="password" id="input-token" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx" autocomplete="off">
+      </div>
+      <button class="btn-auth" id="btn-login-token">Увійти з токеном</button>
+      <p class="auth-hint">Потрібен токен з правами <strong>repo</strong>.<br>
+        <a href="https://github.com/settings/tokens/new" target="_blank">Створити токен на GitHub →</a>
+      </p>
+    </div>
   </div>
 </div>
 

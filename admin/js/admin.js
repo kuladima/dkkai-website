@@ -13,52 +13,97 @@ let content   = null;
 let fileSha   = null;
 let currentPage = 'dashboard';
 
+// ── Crypto helpers ────────────────────────────────────────────
+async function hashPwd(pwd) {
+  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode('kai_salt_' + pwd));
+  return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join('');
+}
+
 // ── Init ─────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
   ghToken = localStorage.getItem('kai_gh_token');
-  if (ghToken) {
+  const pwdHash = localStorage.getItem('kai_admin_pwd_hash');
+
+  if (!ghToken) {
+    // No token yet — first time setup
+    showAuthMode('token');
+  } else if (pwdHash) {
+    // Token saved + password set → ask for password
+    showAuthMode('password');
+  } else {
+    // Token saved, no password yet → go straight in, nudge to set password
     showApp();
     loadContent();
-  } else {
-    showAuth();
+    setTimeout(() => toast('info', '💡 Порада: встановіть пароль у розділі Налаштування → Безпека'), 2000);
   }
 });
 
-// ── Auth ─────────────────────────────────────────────────────
-function showAuth() {
+// ── Auth modes ────────────────────────────────────────────────
+function showAuthMode(mode) {
   document.getElementById('auth-screen').style.display = 'flex';
   document.getElementById('app').style.display = 'none';
+  document.getElementById('auth-mode-password').style.display = mode === 'password' ? 'block' : 'none';
+  document.getElementById('auth-mode-token').style.display   = mode === 'token'    ? 'block' : 'none';
+  document.getElementById('auth-error').classList.remove('show');
 }
 function showApp() {
   document.getElementById('auth-screen').style.display = 'none';
   document.getElementById('app').style.display = 'flex';
 }
 
-document.getElementById('btn-login').addEventListener('click', async () => {
+// ── Password login ────────────────────────────────────────────
+document.getElementById('btn-login-pwd').addEventListener('click', async () => {
+  const pwd = document.getElementById('input-password').value;
+  if (!pwd) return;
+  const err = document.getElementById('auth-error');
+  err.classList.remove('show');
+  const hash = await hashPwd(pwd);
+  if (hash === localStorage.getItem('kai_admin_pwd_hash')) {
+    showApp();
+    loadContent();
+  } else {
+    err.textContent = '❌ Невірний пароль';
+    err.classList.add('show');
+  }
+});
+document.getElementById('input-password')?.addEventListener('keydown', e => {
+  if (e.key === 'Enter') document.getElementById('btn-login-pwd').click();
+});
+document.getElementById('link-use-token')?.addEventListener('click', e => {
+  e.preventDefault(); showAuthMode('token');
+});
+
+// ── Token login ───────────────────────────────────────────────
+document.getElementById('btn-login-token').addEventListener('click', async () => {
   const token = document.getElementById('input-token').value.trim();
   if (!token) return;
   const err = document.getElementById('auth-error');
   err.classList.remove('show');
-  document.getElementById('btn-login').textContent = 'Перевірка...';
+  document.getElementById('btn-login-token').textContent = 'Перевірка...';
   try {
     const r = await ghFetch('https://api.github.com/user', token);
-    if (!r.ok) throw new Error('Невірний токен');
+    if (!r.ok) throw new Error('Невірний токен. Перевір права (потрібен scope: repo)');
     ghToken = token;
     localStorage.setItem('kai_gh_token', token);
     showApp();
     loadContent();
+    setTimeout(() => toast('info', '💡 Встановіть пароль у Налаштуваннях → Безпека, щоб не вводити токен щоразу'), 2500);
   } catch(e) {
     err.textContent = '❌ ' + e.message;
     err.classList.add('show');
   } finally {
-    document.getElementById('btn-login').textContent = 'Увійти';
+    document.getElementById('btn-login-token').textContent = 'Увійти з токеном';
   }
+});
+document.getElementById('input-token')?.addEventListener('keydown', e => {
+  if (e.key === 'Enter') document.getElementById('btn-login-token').click();
 });
 
 document.getElementById('btn-logout').addEventListener('click', () => {
   localStorage.removeItem('kai_gh_token');
+  localStorage.removeItem('kai_admin_pwd_hash');
   ghToken = null; content = null; fileSha = null;
-  showAuth();
+  showAuthMode('token');
 });
 
 // ── GitHub API ────────────────────────────────────────────────
@@ -321,7 +366,64 @@ function renderSettings() {
           <div class="field"><label>LinkedIn</label><input data-path="site.socials.linkedin" value="${esc(s.socials.linkedin)}"></div>
         </div>
       </div>
+    </div>
+
+    <div class="section-card">
+      <div class="section-card-header open"><h3>🔐 Безпека адмін-панелі</h3><span class="collapse-icon">▾</span></div>
+      <div class="section-card-body">
+        <p class="help-text" style="margin-bottom:16px;">
+          ${localStorage.getItem('kai_admin_pwd_hash')
+            ? '✅ Пароль встановлено. Для входу достатньо пароля.'
+            : '⚠️ Пароль не встановлено. Для входу потрібен GitHub токен.'}
+        </p>
+        <div class="field-row">
+          <div class="field"><label>Новий пароль</label><input type="password" id="sec-new-pwd" placeholder="Мінімум 6 символів" autocomplete="new-password"></div>
+          <div class="field"><label>Підтвердити пароль</label><input type="password" id="sec-confirm-pwd" placeholder="Повторіть пароль" autocomplete="new-password"></div>
+        </div>
+        <div style="display:flex;gap:10px;margin-top:4px;">
+          <button class="btn-save" style="padding:9px 20px;font-size:.85rem;" onclick="saveAdminPassword()">🔒 Зберегти пароль</button>
+          ${localStorage.getItem('kai_admin_pwd_hash')
+            ? '<button onclick="removeAdminPassword()" style="padding:9px 20px;background:#fee2e2;color:#991b1b;border-radius:8px;font-size:.85rem;font-weight:600;cursor:pointer;">🗑 Видалити пароль</button>'
+            : ''}
+        </div>
+        <div class="divider"></div>
+        <p class="help-text" style="margin-bottom:12px;">GitHub токен зберігається у браузері. Для заміни токена:</p>
+        <div class="field-row single">
+          <div class="field"><label>Новий GitHub токен</label><input type="password" id="sec-new-token" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx" autocomplete="off"></div>
+        </div>
+        <button class="btn-save" style="padding:9px 20px;font-size:.85rem;" onclick="updateGhToken()">🔑 Оновити токен</button>
+      </div>
     </div>`;
+}
+
+async function saveAdminPassword() {
+  const newPwd = document.getElementById('sec-new-pwd').value;
+  const confirmPwd = document.getElementById('sec-confirm-pwd').value;
+  if (!newPwd) return toast('error', '❌ Введіть пароль');
+  if (newPwd.length < 6) return toast('error', '❌ Пароль має бути не менше 6 символів');
+  if (newPwd !== confirmPwd) return toast('error', '❌ Паролі не збігаються');
+  const hash = await hashPwd(newPwd);
+  localStorage.setItem('kai_admin_pwd_hash', hash);
+  toast('success', '✅ Пароль встановлено! Тепер для входу достатньо пароля.');
+  renderSettings(); // refresh to show updated state
+}
+
+function removeAdminPassword() {
+  if (!confirm('Видалити пароль? Для входу знову знадобиться GitHub токен.')) return;
+  localStorage.removeItem('kai_admin_pwd_hash');
+  toast('info', 'ℹ️ Пароль видалено');
+  renderSettings();
+}
+
+async function updateGhToken() {
+  const token = document.getElementById('sec-new-token').value.trim();
+  if (!token) return toast('error', '❌ Введіть токен');
+  const r = await ghFetch('https://api.github.com/user', token);
+  if (!r.ok) return toast('error', '❌ Невірний токен');
+  ghToken = token;
+  localStorage.setItem('kai_gh_token', token);
+  document.getElementById('sec-new-token').value = '';
+  toast('success', '✅ GitHub токен оновлено');
 }
 
 // ── Array editor builder ──────────────────────────────────────
