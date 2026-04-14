@@ -126,7 +126,7 @@ async function loadContent() {
     if (!r.ok) throw new Error('Не вдалося завантажити content.json');
     const data = await r.json();
     fileSha = data.sha;
-    content = JSON.parse(atob(data.content.replace(/\n/g, '')));
+    content = JSON.parse(decodeURIComponent(escape(atob(data.content.replace(/\n/g, '')))));
     renderCurrentPage();
     updateDeployStatus();
   } catch(e) {
