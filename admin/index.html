@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>КАІ Admin Panel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+<!-- ── AUTH SCREEN ─────────────────────────────────────────── -->
+<div id="auth-screen">
+  <div class="auth-card">
+    <div class="auth-logo">
+      <div class="auth-emblem">КАІ</div>
+      <h2>Admin Panel</h2>
+      <p>Введіть GitHub Personal Access Token для входу в адмін-панель</p>
+    </div>
+    <div id="auth-error" class="auth-error"></div>
+    <div class="auth-field">
+      <label>GitHub Token</label>
+      <input type="password" id="input-token" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx" autocomplete="off">
+    </div>
+    <button class="btn-auth" id="btn-login">Увійти</button>
+    <p class="auth-hint">Потрібен токен з правами <strong>repo</strong>.<br>
+      <a href="https://github.com/settings/tokens/new" target="_blank">Створити токен на GitHub →</a>
+    </p>
+  </div>
+</div>
+
+<!-- ── APP ────────────────────────────────────────────────── -->
+<div id="app" style="display:none;width:100%">
+
+  <!-- Sidebar -->
+  <aside class="admin-sidebar">
+    <div class="sidebar-logo">
+      <div class="sidebar-logo-inner">
+        <div class="sidebar-emblem">КАІ</div>
+        <div>
+          <div class="sidebar-title">Admin Panel</div>
+          <div class="sidebar-sub">kai.edu.ua</div>
+        </div>
+      </div>
+    </div>
+
+    <nav class="sidebar-nav">
+      <div class="nav-section-label">Навігація</div>
+      <div class="sidebar-link active" data-page="dashboard">
+        <span class="icon">📊</span><span class="label">Dashboard</span>
+      </div>
+      <div class="nav-section-label">Сторінки</div>
+      <div class="sidebar-link" data-page="home">
+        <span class="icon">🏠</span><span class="label">Головна сторінка</span>
+      </div>
+      <div class="sidebar-link" data-page="about">
+        <span class="icon">ℹ️</span><span class="label">Про університет</span>
+      </div>
+      <div class="sidebar-link" data-page="faculties">
+        <span class="icon">🎓</span><span class="label">Факультети</span>
+      </div>
+      <div class="sidebar-link" data-page="contacts">
+        <span class="icon">📞</span><span class="label">Контакти</span>
+      </div>
+      <div class="nav-section-label">Система</div>
+      <div class="sidebar-link" data-page="settings">
+        <span class="icon">⚙️</span><span class="label">Налаштування</span>
+      </div>
+    </nav>
+
+    <div class="sidebar-footer">
+      <div class="sidebar-repo">
+        <strong>kuladima/dkkai-website</strong>
+        GitHub Pages
+      </div>
+      <button class="btn-logout" id="btn-logout">🚪 Вийти</button>
+    </div>
+  </aside>
+
+  <!-- Main -->
+  <div class="admin-main">
+
+    <!-- Topbar -->
+    <div class="admin-topbar">
+      <div class="topbar-left">
+        <span class="topbar-page-title" id="topbar-title">Dashboard</span>
+      </div>
+      <div class="topbar-right">
+        <div class="status-badge deployed" id="deploy-status">
+          <span class="status-dot"></span> Опубліковано
+        </div>
+        <button class="btn-preview" id="btn-preview">🌐 Переглянути сайт</button>
+        <button class="btn-save" id="btn-save">💾 Зберегти</button>
+      </div>
+    </div>
+
+    <!-- Content area -->
+    <div class="admin-content">
+
+      <!-- Dashboard -->
+      <div id="page-dashboard" class="page-view active">
+        <div id="dash-stats" class="dash-grid"></div>
+        <h3 style="font-size:.85rem;font-weight:700;color:var(--a-muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:12px;">Швидкий перехід</h3>
+        <div class="dash-links">
+          <div class="dash-link" data-page="home" onclick="document.querySelector('[data-page=home]').click()">
+            <span class="dl-icon">🏠</span> Редагувати головну сторінку <span class="dl-arrow">→</span>
+          </div>
+          <div class="dash-link" data-page="about" onclick="document.querySelector('[data-page=about]').click()">
+            <span class="dl-icon">ℹ️</span> Редагувати «Про університет» <span class="dl-arrow">→</span>
+          </div>
+          <div class="dash-link" data-page="faculties" onclick="document.querySelector('[data-page=faculties]').click()">
+            <span class="dl-icon">🎓</span> Редагувати факультети та програми <span class="dl-arrow">→</span>
+          </div>
+          <div class="dash-link" data-page="contacts" onclick="document.querySelector('[data-page=contacts]').click()">
+            <span class="dl-icon">📞</span> Редагувати контакти <span class="dl-arrow">→</span>
+          </div>
+          <div class="dash-link" data-page="settings" onclick="document.querySelector('[data-page=settings]').click()">
+            <span class="dl-icon">⚙️</span> Налаштування сайту <span class="dl-arrow">→</span>
+          </div>
+        </div>
+        <div style="margin-top:24px;padding:16px 20px;background:var(--a-white);border:1px solid var(--a-border);border-radius:12px;font-size:.82rem;color:var(--a-muted);line-height:1.7;">
+          💡 <strong style="color:var(--a-text);">Як користуватися:</strong> Відредагуйте будь-який розділ і натисніть кнопку <strong>«💾 Зберегти»</strong> вгорі. Зміни з'являться на сайті через ~60 секунд після збереження.
+        </div>
+      </div>
+
+      <!-- Home -->
+      <div id="page-home" class="page-view">
+        <div id="home-content"></div>
+      </div>
+
+      <!-- About -->
+      <div id="page-about" class="page-view">
+        <div id="about-content"></div>
+      </div>
+
+      <!-- Faculties -->
+      <div id="page-faculties" class="page-view">
+        <div id="faculties-content"></div>
+      </div>
+
+      <!-- Contacts -->
+      <div id="page-contacts" class="page-view">
+        <div id="contacts-content"></div>
+      </div>
+
+      <!-- Settings -->
+      <div id="page-settings" class="page-view">
+        <div id="settings-content"></div>
+      </div>
+
+    </div><!-- /admin-content -->
+  </div><!-- /admin-main -->
+</div><!-- /app -->
+
+<!-- Toast container -->
+<div id="toast-container"></div>
+
+<script src="js/admin.js"></script>
+</body>
+</html>

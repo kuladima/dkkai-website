@@ -20,8 +20,8 @@
 <div class="topbar">
   <div class="container">
     <div class="topbar-links">
-      <a href="tel:+380442404517">☎ +38 (044) 240-45-17</a>
-      <a href="mailto:info@kai.edu.ua">✉ info@kai.edu.ua</a>
+      <a data-ck-phone href="tel:+380442404517">☎ +38 (044) 240-45-17</a>
+      <a data-ck-email href="mailto:info@kai.edu.ua">✉ info@kai.edu.ua</a>
       <a href="#">📍 просп. Любомира Гузара, 1, Київ</a>
     </div>
     <div class="topbar-right">
@@ -110,10 +110,10 @@
     <div class="hero-grid">
       <div class="hero-content">
         <div class="hero-badge">✈ Вступна кампанія 2026</div>
-        <h1 id="hero-heading">
+        <h1 id="hero-heading" data-ck="home.hero.title">
           Твоє майбутнє<br><span>починається тут</span>
         </h1>
-        <p class="hero-sub">
+        <p class="hero-sub" data-ck="home.hero.subtitle">
           Київський авіаційний інститут — один із провідних технічних університетів України. 80+ років традицій, сучасні технології та міжнародні програми.
         </p>
         <div class="hero-actions">
@@ -252,7 +252,7 @@
     </div>
 
     <div class="news-grid">
-      <div class="news-list">
+      <div class="news-list" data-ck-list="home.news">
         <article class="news-card" data-cat="news">
           <div class="news-thumb">✈️</div>
           <div>
@@ -287,7 +287,7 @@
         </article>
       </div>
 
-      <aside class="events-panel" aria-label="Найближчі події">
+      <aside class="events-panel" data-ck-list="home.events" aria-label="Найближчі події">
         <h3>📅 Найближчі події</h3>
         <div class="event-item">
           <div class="event-date">20 КВІТ 2026</div>
@@ -327,7 +327,7 @@
       <h2 class="section-title" id="fac-heading">Факультети КАІ</h2>
       <p class="section-sub">9 факультетів та 1 коледж · 150+ освітніх програм · бакалавр, магістр, аспірантура</p>
     </div>
-    <div class="faculty-grid">
+    <div class="faculty-grid" data-ck-list="faculties.list">
       <a href="faculties.html#aerospace" class="faculty-card">
         <div class="faculty-icon">🚀</div>
         <h3>Аерокосмічний факультет</h3>
@@ -373,7 +373,7 @@
 ═══════════════════════════════════════════════════════════ -->
 <section class="stats-section" aria-label="Університет у цифрах">
   <div class="container">
-    <div class="stats-grid">
+    <div class="stats-grid" data-ck-list="home.statsSection">
       <div>
         <div class="stat-number counter" data-target="15000" data-suffix="+">15 000+</div>
         <div class="stat-label">Студентів</div>
@@ -403,7 +403,7 @@
       <span class="section-tag">Партнери</span>
       <h2 class="section-title" style="font-size:1.4rem;">Стратегічні партнери</h2>
     </div>
-    <div class="partners-grid">
+    <div class="partners-grid" data-ck-list="home.partners">
       <div class="partner-logo">Airbus</div>
       <div class="partner-logo">Boeing</div>
       <div class="partner-logo">Укроборонпром</div>
@@ -489,5 +489,6 @@
 </button>
 
 <script src="js/main.js"></script>
+<script src="js/content-loader.js"></script>
 </body>
 </html>
